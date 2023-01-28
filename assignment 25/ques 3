@@ -1,0 +1,37 @@
+
+/*/3. Define a class Factorial and define an instance member function to find the Factorial
+of a number using class.*/
+
+#include <iostream>
+using namespace std;
+
+class Factorial{
+    
+   public:  
+   int f;
+       void fact(int x);//declaring fun bcoz we r defining func outside
+     
+};
+
+void Factorial:: fact(int x)// returnType ClassName::FunctionName
+{int fact=1;
+    for(int i=x; i>0; i--)
+    {   
+        fact=fact*i;
+       
+    }
+    f=fact;
+   
+    cout<<"factorial of "<<x<<" ="<<fact<<endl;
+}
+
+
+
+int main()
+{
+ Factorial f1,f2;
+ f1.fact(5);
+ f2.fact(10);
+ cout<<"f1= "<<f1.f;  //we are able to access f coz it is public
+ cout<<"f2= "<<f2.f;
+}
