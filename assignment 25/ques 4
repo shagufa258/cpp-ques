@@ -1,0 +1,31 @@
+/*4. Define a class LargestNumber and define an instance member function to find the
+Largest of three Numbers using the class.*/
+
+
+#include <iostream>
+using namespace std;
+
+class LargestNum
+{
+    
+   public:  
+    void LN(int x, int y, int z)
+    {
+        if(x>y)
+        {
+            x>z?cout<<x<<" is greatest":cout<<y<< " is greatest"<<endl;
+        }
+        
+        else
+        {
+             y>z?cout<<y<<" is greatest":cout<<z<< " is greatest"<<endl;
+        }
+        
+    }    
+};
+int main()
+{
+ LargestNum n1,n2;
+ n1.LN(2,5,6);
+ n2.LN(2,9,6);
+}
