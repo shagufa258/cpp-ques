@@ -1,0 +1,36 @@
+/*/5. Define a class ReverseNumber and define an instance member function to find
+Reverse of a Number using class.*/
+
+#include <iostream>
+using namespace std;
+
+class ReverseNum{
+    
+   public:  
+    void RN(int n)
+    {int rem=0,  result=0; 
+       while(n!=0)
+       {
+           rem=n%10;
+           result=10*result+rem;
+           n=n/10;
+          
+          
+           
+       }
+       cout<<"final=  "<<result<<endl;
+        
+    }
+
+     
+};
+
+
+
+
+int main()
+{
+ ReverseNum n1,n2;
+ n1.RN(2453);
+ n2.RN(12962);
+}
