@@ -1,0 +1,48 @@
+*******************************************************************************/
+/*9. Define a class Circle and define an instance member function to find the area of the
+circle.*/
+
+#include <iostream>
+using namespace std;
+
+class Circle
+{
+   private:
+        float radius, area; 
+        
+    public:
+        void SetValues(float n1) 
+        {
+            radius=n1;
+         
+          
+        }
+        
+        void GetValues()  
+        {
+             cout<<"radius= "<<radius<<endl;
+        }
+        
+         void FindArea()     
+        {
+            area=2*3.14*radius;
+            
+        }
+        
+        void GetArea()
+        {
+            cout<<"Area of Circle=  "<<area<<endl;
+        }
+        
+};
+
+
+int main()
+{   Circle r1;
+    r1.SetValues(12);
+    r1.GetValues();
+    r1.FindArea();
+    r1.GetArea();
+    
+    return 0;
+}
