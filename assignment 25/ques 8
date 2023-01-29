@@ -1,0 +1,46 @@
+/*8. Define a class Rectangle and define an instance member function to find the area of
+the rectangle.*/
+
+#include <iostream>
+using namespace std;
+class Rectangle
+{
+    private:
+        int side1, side2, area; 
+        
+    public:
+        void SetValues(int n1, int n2)  
+        {
+            side1=n1;
+            side2=n2;
+          
+        }
+        
+        void GetValues()   
+        {
+             cout<<"side1= "<<side1<<"    side2= "<<side2<<endl;
+        }
+        
+         void FindArea()     
+        {
+            area=side1*side2;
+            
+        }
+        
+        void GetArea()
+        {
+            cout<<"Area of rectangle=  "<<area<<endl;
+        }
+        
+};
+
+
+int main()
+{   Rectangle r1;
+    r1.SetValues(9,8);
+    r1.GetValues();
+    r1.FindArea();
+    r1.GetArea();
+    
+    return 0;
+}
