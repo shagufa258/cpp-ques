@@ -1,0 +1,38 @@
+5. Define a class Date and write a program to Display Dateand initialise date object
+using Constructors.
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+   private:
+        int d, m, y; 
+        
+    public:
+       Cube(int d1, int m1, int y1)
+       {
+           d=d1;
+           m=m1;
+           y=y1;
+          
+           
+       }
+       
+  
+        void DisplayDate()  
+        {
+             cout<<d<<":"<<m<<":"<<y<<endl;
+        }
+        
+        
+};
+
+
+int main()
+{   Cube v1(4,02,2023), v2(02,11,2023);
+    
+    v1.DisplayDate();
+    v2.DisplayDate();
+    return 0;
+}
