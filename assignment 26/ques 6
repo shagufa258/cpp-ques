@@ -1,0 +1,38 @@
+/*6. Define a class student and write a program to enter student details using constructor
+and define member function to display all the details.*/
+
+#include <iostream>
+
+using namespace std;
+
+
+class Student
+{
+    private:
+        
+        int std;
+        int roll;
+        
+    public:
+        Student( int y, int z )
+        {
+          
+          std=y;
+          roll=z;
+            
+        }
+    
+       void Display()
+       {    
+           cout<<"  class= "<<std<<"  roll= "<<roll<<endl;
+       }
+};
+
+
+
+int main()
+{
+   Student Amrit( 10,25 ), Nimrit( 9,63);
+   Amrit.Display();
+   Nimrit.Display();
+}
