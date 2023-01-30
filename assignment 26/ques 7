@@ -1,0 +1,50 @@
+7. Define a class Box and write a program to enter length, breadth and height and
+initialise objects using constructor also define member functions to calculate volume
+of the box.
+
+#include <iostream>
+
+using namespace std;
+
+
+class Box
+{
+    private:
+        
+        int l;
+        int w;
+        int h;
+        int vol;
+        
+    public:
+       Box( int x, int y, int z )
+        {
+          l=x;
+          w=y;
+          h=z;
+            
+        }
+        
+        void volume()
+        {
+            vol=l*w*h;
+            
+        }
+    
+       void Display()
+       {    
+           cout<<"l= "<<l<<" w= "<<w<<"h = "<<h<<endl;
+           cout<<"volume= "<<vol<<endl;
+       }
+};
+
+
+
+int main()
+{
+   Box a( 10,25,32 ), b(6, 9,63);
+   a.volume();
+   b.volume();
+   a.Display();
+   b.Display();
+}
