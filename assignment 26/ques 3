@@ -1,0 +1,60 @@
+
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+   private:
+        int side1, side2, side3, volume; 
+        
+    public:
+       Cube()
+       {
+           side1=0;
+           side2=0;
+           side3=0;
+           
+           
+           cout<<side1<<side2<<side3<<endl;
+       }
+       
+       void SetValues(int x, int y, int z)
+       {
+           side1=x;
+           side2=y;
+           side3=z;
+       }
+        
+        void GetValues()  
+        {
+             cout<<"s1= "<<side1<<"s2= "<<side2<<"s3= "<<side3<<endl;
+        }
+        
+         Cube FindVolume()     
+        {   Cube temp;
+            temp.side1=side1;
+            temp.side2=side2;
+            temp.side3=side3;
+            volume=side1*side2*side3;
+            return temp;
+            
+        }
+        
+        void GetVolume()
+        {
+            cout<<"volume of cube=  "<<volume<<endl;
+        }
+        
+};
+
+
+int main()
+{   Cube v1;
+    v1.SetValues(3,8,6);
+    v1.GetValues();
+    v1.FindVolume();
+    v1.GetVolume();
+    
+    return 0;
+}
