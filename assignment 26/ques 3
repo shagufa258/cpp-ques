@@ -9,30 +9,24 @@ class Cube
         int side1, side2, side3, volume; 
         
     public:
-       Cube()
+       Cube(int s1, int s2, int s3  )  //defining constructor
        {
-           side1=0;
-           side2=0;
-           side3=0;
+           side1=s1;   //initializing member variable of caller object with given value
+           side2=s2;
+           side3=s3;
            
+          
            
-           cout<<side1<<side2<<side3<<endl;
        }
        
-       void SetValues(int x, int y, int z)
-       {
-           side1=x;
-           side2=y;
-           side3=z;
-       }
-        
+  
         void GetValues()  
         {
-             cout<<"s1= "<<side1<<"s2= "<<side2<<"s3= "<<side3<<endl;
+             cout<<"s1= "<<side1<<" s2= "<<side2<<" s3= "<<side3<<endl;
         }
         
          Cube FindVolume()     
-        {   Cube temp;
+        {   Cube temp(0,0,0);   // we hv to pass argument while creating any object of this class bcoz we passed 3 arg while defining constructor
             temp.side1=side1;
             temp.side2=side2;
             temp.side3=side3;
@@ -50,11 +44,15 @@ class Cube
 
 
 int main()
-{   Cube v1;
-    v1.SetValues(3,8,6);
-    v1.GetValues();
+{   Cube v1(4,2,3), v2(2,1,3); // explicitly calling constructor by initialising value passing as argument
+    //v1.SetValues(3,8,6);
+    v1.GetValues();   //no need to set value bcoz it is sat using constructor
     v1.FindVolume();
     v1.GetVolume();
+    
+     v2.GetValues();
+    v2.FindVolume();
+    v2.GetVolume();
     
     return 0;
 }
