@@ -1,0 +1,64 @@
+/*2. Write a C++ program to overload unary operators that is increment and decrement.*/
+
+
+#include <iostream>
+using namespace std;
+
+class Complex{
+    
+    private:
+        int a, b;
+    
+    public:
+   
+        
+        void ShowData()
+        {
+            cout<<"a= "<<a<<" b= "<<b<<endl;
+        }
+        
+        void SetData(int x, int y)
+        {
+            a=x;
+            b=y;
+        }
+        
+         Complex operator++( int)  //pre increment 
+        {    Complex temp;
+            a++;
+            b++;
+             temp.a=a;
+            temp.b=b;
+            return temp;
+        }
+        
+         Complex operator++()  //post increment
+        {
+            Complex temp;
+            temp.a= a;
+            temp.b=b;
+            a++;
+            b++;
+            
+            
+            return temp;
+        }
+        
+       
+};
+
+int main()
+{   Complex c1, c2, c3, c4, c5;
+    bool b1;
+    c1.SetData(2,8); //c1->a=2 b=8
+    c2.SetData(2,6); 
+    c3=c1++;        //c1++ -> a=3 b=9 then print
+    c3.ShowData();
+    
+    cout<<"***** - operator****"<<endl;
+    c4=++c1;    // first assign in c4 a=3 b=9 then increment  a=4 b=10
+    c4.ShowData();
+    c1.ShowData();  // to make sure a=4 b=10 are or not
+    
+    return 0;
+}
