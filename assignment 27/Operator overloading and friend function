@@ -1,0 +1,99 @@
+1. Define a class Complex with appropriate instance variables and member functions.
+Define following operators in the class:
+a. +
+b. -
+c. *
+d. ==
+
+
+#include <iostream>
+using namespace std;
+
+class Complex{
+    
+    private:
+        int a, b;
+    
+    public:
+   
+        
+        void ShowData()
+        {
+            cout<<"a= "<<a<<" b= "<<b<<endl;
+        }
+        
+        void SetData(int x, int y)
+        {
+            a=x;
+            b=y;
+        }
+        
+         Complex operator+( Complex x)
+        {
+            Complex temp;
+            temp.a= a+x.a;
+            temp.b=b+x.b;
+            
+            return temp;
+        }
+        
+         Complex operator-( Complex x)
+        {
+            Complex temp;
+            temp.a= a-x.a;
+            temp.b=b-x.b;
+            
+            return temp;
+        }
+        
+         Complex operator*( Complex x)
+        {
+            Complex temp;
+            temp.a= a*x.a;
+            temp.b=b*x.b;
+            
+            return temp;
+        }
+        
+         bool operator==( Complex x)
+        {
+          if((a==x.a)&(b==x.b))
+          {
+              return true;
+              
+          }
+          else
+          {
+              return false;
+          }
+          
+        }
+        
+        
+        
+};
+
+int main()
+{   Complex c1, c2, c3, c4, c5;
+    bool b1;
+    c1.SetData(2,8);
+    c2.SetData(2,6);
+    c3=c1+c2;
+    c3.ShowData();
+    
+    cout<<"***** - operator****"<<endl;
+    c4=c1-c2;
+    c4.ShowData();
+    
+    cout<<"***** (*) operator****"<<endl;
+    c4=c1-c2;
+    c4.ShowData();
+    
+    cout<<"***** (==)operator****"<<endl;
+   
+    b1=c1==c2;
+    cout<<b1;  //cout<<b1 is not working bcoz in cout.operator<<(primitive data type)  and in object we were passing object 
+                //of another class means we weretrying to reach member of another calss that is only accessable by object of same class
+
+    return 0;
+}
