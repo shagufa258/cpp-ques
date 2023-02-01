@@ -5,4 +5,101 @@
 Write a C++ program using operator overloading for the following:
 1. = = : To check whether two Times are the same or not.
 2. >> : To accept the time.
-3. << : To display the time.*/
+3. << : To display the time.
+
+output:
+Enter first time"
+----------------------
+Enter hours : 23
+
+Enter minutes : 24
+
+Enter Seconds : 41
+
+First Time
+Hours : 23
+Minutes: 2
+Seconds : 3
+
+Enter second time"
+----------------------
+Enter hours : 23
+
+Enter minutes : 24
+
+Enter Seconds : 41
+
+Second Time
+Hours : 23
+Minutes: 2
+Seconds : 3
+
+Times are same
+
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+class Time{
+    
+    private:
+        int h,m,s;
+    
+    public:
+    void operator>>(Time )  //to accept the time
+    {   
+        cout<<"Enter hours: ";
+        cin>>h;
+        cout<<endl;
+        cout<<"enter min : ";
+        cin>>m;
+        cout<<endl;
+        cout<<"Enter second : ";
+        cin>>s;
+        cout<<endl;
+        
+    }
+       
+       void operator<<(Time)
+       {
+           cout<<"Hours : "<<h<<endl;
+           cout<<"minutes : "<<m<<endl;
+           cout<<"sconds : "<<s<<endl;
+       }
+       
+       
+       void operator==(Time x)
+       {
+           if ((h==x.h)&(m==x.m)&(s==x.s))
+           {
+               cout<<"Times are same"<<endl;
+           }
+           else
+           {
+               cout<<"times are not same"<<endl;
+           }
+       }
+};
+
+int main()
+{   Time t1, t2, t3;
+    cout<< "eneter first time"<<endl;
+    cout<<"----------------------"<<endl;
+    t2>>t1; //to accept time
+    cout<<"First Time"<<endl;
+    t2<<t1; //to show time;
+    
+     cout<< "Enter Second time"<<endl;
+    cout<<"----------------------"<<endl;
+    t3>>t1; //to accept time
+    cout<<"Second Time"<<endl;
+    t3<<t1; //to show time;
+    
+    t2==t3;
+    
+    return 0;
+}
