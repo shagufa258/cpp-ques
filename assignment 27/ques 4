@@ -41,6 +41,7 @@ Times are same
 */
 
 
+
 #include <iostream>
 using namespace std;
 
@@ -74,7 +75,9 @@ class Time{
        
        void operator==(Time x)
        {
-           if ((h==x.h)&(m==x.m)&(s==x.s))
+          /*--------method 1-----
+          
+          if ((h==x.h)&(m==x.m)&(s==x.s))
            {
                cout<<"Times are same"<<endl;
            }
@@ -82,12 +85,33 @@ class Time{
            {
                cout<<"times are not same"<<endl;
            }
+           
+           */
+           
+           //v --------method 2-----
+           //converting time into Second
+           
+           
+           
+           int temp;
+           if((h*3600+m*60+s)==(x.h*3600+x.m*60+x.s))
+
+            {
+                cout<<"times are same"<<endl;
+               
+            } 
+            else
+            {
+                 cout<<"times are not same"<<endl;
+            }
+         
+           
        }
 };
 
 int main()
 {   Time t1, t2, t3;
-    cout<< "eneter first time"<<endl;
+    cout<< "enter first time"<<endl;
     cout<<"----------------------"<<endl;
     t2>>t1; //to accept time
     cout<<"First Time"<<endl;
