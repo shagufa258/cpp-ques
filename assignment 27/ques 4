@@ -42,6 +42,7 @@ Times are same
 
 
 
+
 #include <iostream>
 using namespace std;
 
@@ -51,25 +52,30 @@ class Time{
         int h,m,s;
     
     public:
-    void operator>>(Time )  //to accept the time
+    
+    
+    
+    friend istream&  operator>>(istream &in, Time &t )  //to accept the time
     {   
         cout<<"Enter hours: ";
-        cin>>h;
+        in>>t.h;
         cout<<endl;
-        cout<<"enter min : ";
-        cin>>m;
+        cout<<"enter min : ";         //in cin and cout os both are same because we have overloaded them
+        in>>t.m;
         cout<<endl;
         cout<<"Enter second : ";
-        cin>>s;
+        in>>t.s;
         cout<<endl;
+        return in;
         
     }
        
-       void operator<<(Time)
+       friend ostream& operator<<(ostream &os, Time &t)
        {
-           cout<<"Hours : "<<h<<endl;
-           cout<<"minutes : "<<m<<endl;
-           cout<<"sconds : "<<s<<endl;
+           os<<"Hours : "<<t.h<<endl;
+           os<<"minutes : "<<t.m<<endl;
+           os<<"sconds : "<<t.s<<endl;
+           return os;
        }
        
        
@@ -88,7 +94,7 @@ class Time{
            
            */
            
-           //v --------method 2-----
+           //v /*--------method 1-----
            //converting time into Second
            
            
@@ -113,17 +119,17 @@ int main()
 {   Time t1, t2, t3;
     cout<< "enter first time"<<endl;
     cout<<"----------------------"<<endl;
-    t2>>t1; //to accept time
+    cin>>t1; //to accept time
     cout<<"First Time"<<endl;
-    t2<<t1; //to show time;
+    cout<<t1; //to show time;
     
-     cout<< "Enter Second time"<<endl;
+    cout<< "Enter Second time"<<endl;
     cout<<"----------------------"<<endl;
-    t3>>t1; //to accept time
+    cin>>t2; //to accept time
     cout<<"Second Time"<<endl;
-    t3<<t1; //to show time;
+    cout<<t2; //to show time;
     
-    t2==t3;
+    t2==t1;
     
     return 0;
 }
