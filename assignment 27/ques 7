@@ -1,0 +1,125 @@
+/*7. Define a C++ class fraction
+class fraction
+{
+long numerator;
+long denominator;
+Public:
+fraction (long n=0, long d=0);
+}
+Overload the following operators as member or friend:
+a) Unary ++ (pre and post both)
+b) Overload as friend functions: operators << and >>.
+
+Output-
+f1: 0/0
+f2 : 0/0
+
+Enter 1st Fraction value
+
+Numerator : 2
+Denominator : 3
+
+f1++ : 3/4
+++f1 : 4/5
+
+Enter 2nd fraction
+
+Numerator : 1
+Denominator : 2
+
+f2= ++f1
+f1 :5/6
+f2 : 5/6
+
+f2=f1++
+f1 : 6/7
+f2 : 5/6
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+class Fraction{
+    
+    private:
+        long num, den;
+    
+    public:
+    
+    Fraction()
+    {
+        num=0;
+        den=0;
+        
+    }
+    
+    void setFraction()
+    {
+        cout<<"Numerator : ";
+        cin>>num;
+        cout<<"Denominator : ";
+        cin>>den;
+    }
+    
+    void display()
+    {
+       cout<<num<<"/"<<den<<endl;
+    
+    }
+    
+    
+    Fraction operator++( )  ///pre increment
+    {   
+        num+=1;
+        den+=1;
+        return *this;
+    }
+    
+     Fraction operator++( int)  ///post increment
+    {   
+        Fraction temp;  //here we r firststoring the value of caler object in 
+                         //temp bcoz we need to return it same it is the we will increment
+        temp=*this;
+        num+=1;
+        den+=1;
+        return temp;
+    }
+       
+};
+
+int main()
+{   Fraction f1, f2, f3;
+    cout<<"f1 : ";
+    f1.display();
+    cout<<"f2 : ";
+    f2.display();
+    cout<<"\nEnter 1st Fraction value"<<endl;
+    f1.setFraction();
+    f1++;
+     f1.display();
+    ++f1;
+    f1.display();
+    
+     
+    cout<<"\nEnter 2nd Fraction value"<<endl;
+    f2.setFraction();
+    cout<<"f2= ++f1"<<endl;
+    f2=++f1;
+    cout<<"f1 : ";
+    f1.display();
+    cout<<"f2 : ";
+    f2.display();
+    
+     f2=f1++;
+    cout<<"\nf1 : ";
+    f1.display();
+    cout<<"f2 : ";
+    f2.display();
+    
+    
+    
+    
+    return 0;
+}
