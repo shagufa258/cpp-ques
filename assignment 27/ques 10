@@ -1,0 +1,82 @@
+/**10.
+Class Matrix
+{
+int a[3][3];
+Public:
+//methods;
+};
+Let m1 and m2 are two matrices. Find out m3=m1+m2 (use operator
+overloading)./
+
+
+#include <iostream>
+
+using namespace std;
+
+class Matrix
+{
+   private:
+    int x[3][3];
+    
+    public:
+       void setElement()
+       {    for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                       
+                       cin>>x[i][j];
+                    }
+             }
+       }
+       
+       void PrintMatrix()
+       {    for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                       
+                       cout<<x[i][j]<<"\t";
+                    }
+                cout<<"\n";    
+             }
+       }
+       
+       //print matrix
+       
+       
+     
+       
+       Matrix operator+(Matrix m)
+       {
+           Matrix temp;
+       for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                        temp.x[i][j]=x[i][j]+m.x[i][j];
+                    }
+                 
+             }
+             return temp;
+       }
+};
+
+
+int main()
+{  Matrix m1,m2,m3;
+ cout<<"\n enter 1st matrix:"<<endl;
+    m1.setElement();
+    cout<<"\n 1st matrix is :"<<endl;
+    m1.PrintMatrix();
+    
+    cout<<"\n enter 2nd matrix:"<<endl;
+    m2.setElement();
+    cout<<"\n 2nd matrix is :"<<endl;
+    m2.PrintMatrix();
+    
+    m3=m1+m2;
+    cout<<"\n addition of matrix is : "<<endl;
+    m3.PrintMatrix();
+    return 0;
+}
