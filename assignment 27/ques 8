@@ -1,0 +1,73 @@
+/*Consider a class Matrix
+Class Matrix
+{
+int a[3][3];
+Public:
+//methods;
+};
+Overload the - (Unary) should negate the numbers stored in the object.
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+class Matrix
+{
+   private:
+    int x[3][3];
+    
+    public:
+       void setElement()
+       {    for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                       
+                       cin>>x[i][j];
+                    }
+             }
+       }
+       
+       void PrintMatrix()
+       {    for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                       
+                       cout<<x[i][j]<<"\t";
+                    }
+                cout<<"\n";    
+             }
+       }
+       
+       //print matrix
+       
+       
+     
+       
+       void operator-()
+       {
+       for (int i=0;i<3;i++)
+             {    
+                 for (int j=0;j<3;j++)
+                    {
+                        x[i][j]=-x[i][j];
+                    }
+                 
+             }
+       }
+};
+
+
+int main()
+{  Matrix m1;
+    m1.setElement();
+    cout<<"\nmatrix is :"<<endl;
+    m1.PrintMatrix();
+    -m1;
+    cout<<"\nmatrix is : "<<endl;
+    m1.PrintMatrix();
+    return 0;
+}
