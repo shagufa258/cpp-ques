@@ -1,0 +1,96 @@
+ CONFUSION::IN SMALL PART
+ 1- GETTING ERROR IN COMMENTED PART
+ 2-HOW TO COMPARING STRING
+
+/*6. Create a class CString to represent a string.
+a) Overload the + operator to concatenate two strings.
+b) == to compare 2 strings.*/
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Mystring
+{
+    
+    private:
+        char str[100];
+        
+    public:
+        void setString()
+        {
+            cout<<"enter string : ";
+            cin>>str;
+        }
+        
+         void getString()
+        {
+            
+            cout<<str;
+        }
+        
+      /* CONFUSION::
+      friend Mystring operator+(Mystring a,Mystring b)
+        {
+            Mystring temp;
+            cout<<strcat( a.str,b.str);
+            temp.str = strcat( a.str,b.str); 
+            return temp;
+        }
+        
+        error: incompatible types in assignment of ‘char*’ to ‘char [100]’
+              error: temp.str = strcat( a.str,b.str); */
+              
+              
+     friend void operator+(Mystring a,Mystring b)
+        {
+            cout<<strcat( a.str,b.str)<<endl;
+            
+    
+        }
+        
+         friend void operator==(Mystring a,Mystring b)
+        {
+            //to compare   we can't do  if(a.str==b.str) it will compare the addresses
+            
+            for(int i=0; a.str[i]!='\0'; i++)
+            {
+               
+                   for(int j=0; b.str[j]!='\0'; j++)
+                {
+                    if(a.str[i]==b.str[j])
+                    {   cout<<"same string"<<endl;
+                        
+                    }
+                    else 
+                    {cout<<"different string"<<endl;
+                       
+                    }
+        
+                }
+                
+            }    
+    
+        }
+};
+
+int main()
+{
+    Mystring s1, s2,s3;
+    s1.setString();
+    s2.setString();
+    s1+s2;
+    s1==s2;
+    
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
