@@ -1,0 +1,70 @@
+//7. Create an Integer class and overload logical not operator for that class.//
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class integers
+{
+    
+    private:
+        int x, y;
+        
+    public:
+        void setval()
+        {
+            cout<<"enter val x : ";
+            cin>>x;
+            cout<<"enter val y: ";
+            cin>>y;
+            
+        }
+        
+         void getval()
+        {
+            
+            cout<<"x= "<<x<<endl;
+            cout<<"y= "<<y<<endl;
+        }
+       /* ***************not able to overload by returning       
+              
+     integers operator!()
+        {   integers temp;
+           temp.x=!x;
+           temp.y=!y;
+           
+           cout<< temp.x<< temp.y;
+           
+            return temp;
+            
+    
+        }
+        */  //this too also not working
+        
+         void operator!()
+        {   
+          cout<<"!x= "<<!x<<endl;
+          cout<<"!y= "<<!y<<endl<<endl;
+           
+        }   
+      //*******************************************     
+        
+};
+
+int main()
+{
+    integers n1, n2, n3;
+    n1.setval();
+    !n1;
+    n1.getval();
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
