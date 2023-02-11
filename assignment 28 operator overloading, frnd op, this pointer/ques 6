@@ -1,0 +1,56 @@
+//6. Create a complex class and overload assignment operator for that class.
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Complex
+{
+    
+    private:
+        int x, y;
+        
+    public:
+        void setval()
+        {
+            cout<<"enter val x : ";
+            cin>>x;
+            cout<<"enter val y: ";
+            cin>>y;
+            
+        }
+        
+         void getval()
+        {
+            
+            cout<<"x+iy= "<<x<<"+i"<<y<<endl;
+           
+        }
+       
+         void operator=(Complex c)
+        {   
+            
+          x=c.x;
+          y=c.y;
+          
+           
+        }   
+           
+        
+};
+
+int main()
+{
+    Complex c1, c2;
+    c1.setval();
+    c2=c1;
+    cout<<"c1= ";
+    c1.getval();
+    
+    cout<<"c2= ";
+    c2.getval();
+    return 0;
+    
+}
+
+
