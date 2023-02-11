@@ -1,0 +1,60 @@
+/* **********    GETTING WARNING ******************
+
+
+3. Overload subscript operator [] that will be useful when we want to check for an index
+out of bound.*/
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Complex
+{
+    
+    private:
+        int x[100];
+        const int size=100;
+        
+    public:
+        void setarray(int n, int index)
+        {
+           
+            x[index]=n;
+           
+        }
+        
+         void getarray(int index)
+        {
+            
+            cout<<x[index]<<endl;
+           
+        }
+       
+         int operator[](int index)
+        {   
+            
+          if(index>size)
+          {
+              cout<<"array index out of bound"<<endl;
+              exit(0);
+              return x[index];
+          }
+          
+           
+        }   
+           
+        
+};
+
+int main()
+{
+    Complex c1, c2;
+    c1.setarray(5,10);
+    c1.getarray(10);
+    
+    cout<<c1[150];
+    return 0;
+    
+}
+
+
