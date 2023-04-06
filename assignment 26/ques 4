@@ -1,0 +1,31 @@
+4. Define a class Counter and Write a program to Show Counter using Constructor.
+#include <iostream>
+
+using namespace std;
+int count=0;
+class counter
+{   private:
+        int a;
+        
+    public:
+    
+        counter()
+        {
+            count++;
+            
+        }
+        
+    void showCount()
+    {
+        cout<<"count = "<<count<<endl;
+    }
+};
+
+int main()
+{
+    counter c1, c2, c3;
+    cout<<count;
+    
+
+    return 0;
+}
