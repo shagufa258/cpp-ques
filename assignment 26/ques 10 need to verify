@@ -1,0 +1,40 @@
+/*10. Define a class StaticCount and create a static variable. Increment this variable in a
+function and call this 3 times and display the result.*/
+
+#include <iostream>
+
+using namespace std;
+
+class staticCount
+{   private:
+       static int var;
+      
+        
+    public:
+    static void increment();
+   
+    void get()
+    {
+      
+        cout<<" var= "<<var<<endl;
+    }
+    
+   
+};
+int staticCount::var;
+void staticCount::increment()
+ {
+        var++;
+    }
+
+int main()
+{
+    staticCount s1, s2;
+    s1.increment();
+    s1.increment();
+    s1.increment();
+    s1.get();
+    
+    return 0;
+    
+}
