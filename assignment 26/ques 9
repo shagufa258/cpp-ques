@@ -1,0 +1,48 @@
+#include <iostream>
+
+/*Define a class Bill and define its member function get() to take detail of customer ,
+calculateBill() function to calculate electricity bill using below tariff :
+Upto 100 unit RS. 1.20 per unit
+From 100 to 200 unit RS. 2 per unit
+Above 200 units RS. 3 per unit.*/
+
+using namespace std;
+
+class bill
+{   private:
+       int accNo,balance ;
+      
+        
+        
+    public:
+    
+     bill( int accNo1, int balance1)
+     {
+         
+         balance=balance1;
+         accNo=accNo1;
+     }
+    void get()
+    {
+      
+        cout<<" balance= "<<balance<<endl;
+        cout<<" account no. = "<<accNo<<endl;
+    }
+    
+    
+    void calculateBill()
+    {
+        //calculateBill
+        
+    }
+};
+
+int main()
+{
+    bill b1(3225,3000), b2(6555,10000);
+    b1.get();
+    b2.get();
+    
+
+    return 0;
+}
