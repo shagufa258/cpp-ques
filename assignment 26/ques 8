@@ -1,0 +1,54 @@
+/*Define a class Bank and define member functions to read principal , rate of interest
+and year. Another member functions to calculate simple interest and display it.
+Initialise all details using constructor.*/
+
+#include <iostream>
+
+using namespace std;
+
+class bank
+{   private:
+        float p,roi,yr;
+        
+        
+    public:
+    
+        bank(float p1, float roi1, float yr1)
+        {
+            p=p1;
+            roi=roi1;
+            yr=yr1;
+            
+        }
+        
+    void principle()
+    {
+        cout<<"p = "<<p<<endl;
+    }
+    void ROI()
+    {
+        cout<<"rate of interest = "<<roi<<endl;
+    }
+    void year()
+    {
+        cout<<"year= "<<yr<<endl;
+    }
+    
+    void SI()
+    {
+       
+        cout<<"simple interest= "<<(p*roi*yr)/100<<endl;
+        
+    }
+};
+
+int main()
+{
+    bank b1(2500,5,3), b2(5000,6,10);
+    b1.principle();
+    b1.SI();
+    b2.SI();
+    
+
+    return 0;
+}
