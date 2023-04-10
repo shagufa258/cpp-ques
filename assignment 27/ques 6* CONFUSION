@@ -88,6 +88,101 @@ int main()
 }
 
 
+/*******************by prateek jain*****************/
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Cstring
+{
+    
+    private:
+        char str[100];
+        
+    public:
+        void setString()
+        {
+            cout<<"enter string : ";
+            cin>>str;
+        }
+        
+         void getString()
+        {
+            
+            cout<<str<<endl;
+        }
+        
+      
+              
+              
+    Cstring operator+(Cstring x)
+        {
+            Cstring s;
+            strcpy(s.str,str);
+            strcat( s.str,x.str);
+            return s;
+    
+        }
+        
+         void operator==(Cstring &t)
+        {
+            //to compare   we can't do  if(a.str==b.str) it will compare the addresses
+            int flag=0;
+            for(int i=0; str[i]!='\0'; i++)
+            {
+               
+                   for(int j=0; str[j]!='\0'; j++)
+                {
+                    if(str[i]==t.str[j])
+                    {   flag=1;
+                        
+                    }
+                    else 
+                    {flag= 0;
+                       
+                    }
+        
+                }
+                
+            }  
+            
+            if (flag==1)
+            {
+                cout<<"same string"<<endl;
+            }
+            
+            else
+            {
+                cout<<"different string"<<endl;
+            }
+    
+        }
+};
+
+int main()
+{
+    Cstring s1, s2,s3;
+    s1.setString();
+    s2.setString();
+    s3=s1+s2;
+    s3.getString();
+    s1==s2;
+    
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
