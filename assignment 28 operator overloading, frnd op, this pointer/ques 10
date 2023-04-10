@@ -1,0 +1,54 @@
+/*10. Create a Distance class having 2 instance variable feet and inches. Also create
+default constructor and parameterized constructor takes 2 variables . Now overload ()
+function call operator that takes 3 arguments a , b and c and set feet = a + c + 5 and
+inches = a+b + 15.*/
+
+#include <iostream>
+using namespace std;
+
+class Distance{
+    
+    private:
+        int inches, feet;
+    
+    public:
+   
+        Distance()
+        {
+            cout<<"default constructor called"<<endl;
+        }
+        
+        Distance(int i, int f)
+        {
+           inches= i;
+           feet=f;
+        }
+        
+        Distance operator()(int a, int b, int c)
+        {   
+            Distance temp;
+            temp.feet=a+c+5;
+            temp.inches=a+b+15;
+            return temp;
+        }
+        
+        void ShowData()
+        {
+            cout<<"inches = "<<inches<<endl<<" feet= "<<feet<<endl;
+        }
+        
+       
+       
+};
+
+int main()
+{   
+Distance d1(1,2), d2(3,3), d3,d4;
+d1.ShowData();
+d2.ShowData();
+
+d4= d2(1,1,1);
+  d4.ShowData();
+   
+    return 0;
+}
