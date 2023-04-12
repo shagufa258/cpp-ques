@@ -24,9 +24,9 @@ class Marks {
             
         }
         
-        Marks *operator->()
+        Marks *operator->() //coz we r returning add so to recieve it we are using * here
         {
-            return this;
+            return this;        //returning address of the Marks  class
         }
   
   
