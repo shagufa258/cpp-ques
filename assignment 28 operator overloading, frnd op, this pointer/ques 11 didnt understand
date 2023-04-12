@@ -1,0 +1,47 @@
+/*11. Create a class Marks that have one member variable marks and one member
+function that will print marks. We know that we can access member functions using
+(.) dot operator. Now you need to overload (->) arrow operator to access that
+function.*/
+
+#include <iostream>
+
+using namespace std;
+
+class Marks {
+    private:
+        int mark;
+        
+    public:
+         void setval(int x1)
+        {
+            mark=x1; 
+        }
+        
+         void getval()
+        {
+            
+            cout<<"marks= "<<mark<<endl;
+            
+        }
+        
+        Marks *operator->()
+        {
+            return this;
+        }
+  
+  
+};
+
+
+
+
+
+
+
+int main()
+{Marks m;
+m.setval(100);
+m->getval();
+
+    return 0;
+}
