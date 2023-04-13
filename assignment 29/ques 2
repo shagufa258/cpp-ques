@@ -1,0 +1,47 @@
+/*2. Write a C++ program to convert Complex type to Primitive type.
+Example -
+int main()
+{
+Complex c1;
+c1.setData(3,4);
+int x;
+x=c1;
+return 0;
+}*/
+
+
+
+#include <iostream>
+using namespace std;
+
+class Complex{
+    
+    int comp;
+    
+    public:
+    
+    void setData(int a, int b)
+    {
+        comp=a;
+        
+    }
+        void Display()
+        {
+            cout<<"comp= "<<comp<<endl;
+        }
+        
+    operator int(){
+        return comp;
+    }
+    
+};
+
+int main()
+    {
+        Complex c1;
+        c1.setData(3,4);
+        int x;
+        x=c1;  //converting non primittive to primittive and assigning to x(primittive)
+        cout<<"x= "<<x;
+        return 0;
+    }
