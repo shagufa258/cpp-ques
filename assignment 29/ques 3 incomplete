@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Product{
+    
+    int p;
+    
+    public:
+    
+    void setData(int a, int b)
+    {
+        p=a;
+        
+    }
+        void Display()
+        {
+            cout<<"p= "<<p<<endl;
+        }
+   
+    int getP()
+    {
+        return p;
+    }
+};
+
+class Item{
+     int i;
+     
+      void Display()
+        {
+            cout<<"i1 = "<<i<<endl;
+        }
+    Item()
+    {
+        
+    }
+         
+    Item(Product x)
+    {
+       i=getP(); 
+    }
+};
+
+
+
+int main()
+    {
+        Item i1;
+        Product p1;
+        p1.setData(3,4);
+
+       i1=p1;  //converting primittive to primittive and assigning to i1(primittive)
+        i1.Display();
+        return 0;
+    }
