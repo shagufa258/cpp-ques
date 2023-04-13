@@ -1,0 +1,78 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+int n=10;
+class Dollar{
+    
+    private:
+        int d;
+        
+    public:
+        void Display()
+        {
+            cout<<"d="<<d<<endl;
+        }
+        
+        int setVal(int x)
+        {
+            d=x;
+
+            return d;
+        }
+        
+    Dollar()
+    {
+        
+    }
+     
+     Dollar(int x)       // to convert int to dollar
+     {
+         cout<<"parameterized constructor called"<<endl;
+         d=n;  // assigning int value to instance var of caller object
+     }
+     operator int()
+     {
+         cout<<"int operator called"<<endl;
+     
+         return d;  //returning int 
+     }
+     
+};
+
+int main()
+{  
+    Dollar d1, d2;
+    d1.setVal(5);  //d of d1= 5
+    d2.setVal(2); //d of d2=2
+    
+    cout<< "before"<<endl<<"d1.";
+    d1.Display();
+    cout<<"d2."; 
+    d2.Display(); 
+    cout<<"n= "<<n<<endl;
+     
+    cout<<"now assining n to d1(d1=n) "<<endl;
+    d1=n;       
+    cout<<"d1.";
+    d1.Display();
+    
+    cout<<"int to dollar conversion complete using constructor"<<endl;
+    cout<<endl<<"*****"<<endl<<endl;
+    
+    cout<<"****dollar to int conversion by overloading int operator******"<<endl;
+    cout<<"before"<<endl<<"n="<<n<<"and d2.";
+    d2.Display();
+    cout<<"doing n=d2"<<endl ;
+    n=d2;
+    cout<<"now n= "<<n;
+    
+    return 0;
+}
