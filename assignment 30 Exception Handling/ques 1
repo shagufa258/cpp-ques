@@ -1,0 +1,39 @@
+/*1. Write a C++ program to demonstrate the use of try, catch block with the argument as an
+integer and string using multiple catch blocks.*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x;
+    
+    try
+    {
+        cout<<"enter a num";
+        cin>>x;
+        if(x>0)
+        {
+            throw x;
+            
+        }
+        else{
+            throw "please enter a num that is greater than zero ";
+        }
+        
+        
+        
+        
+    }
+    catch(int intCatch){
+        cout<<"intCatch="<<intCatch;
+    }
+    
+    catch(const char stringCatch[40]){
+        cout<<stringCatch;
+        
+    }
+
+    return 0;
+}
