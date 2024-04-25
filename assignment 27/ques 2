@@ -62,3 +62,89 @@ int main()
     
     return 0;
 }
+
+
+
+
+/*/******************************************************************************
+if i am changing dummy variable from pre to post then also it is working but order is getting change, cant understand that.
+
+*******************************************************************************/
+/* Define a class Complex to represent a complex number. Declare instance member
+variables to store real and imaginary part of a complex number, also define instance
+member functions to set values of complex number and print values of complex
+number*/
+#include<iostream>
+using namespace std;
+class Complex
+{
+    int a;
+    int b;
+    
+    public:
+
+        Complex(int s1, int s2){
+            a=s1;
+            b=s2;
+        }
+        
+        void print(){
+        cout<<"side1="<<a<<"\t";
+        cout<<"side2="<<b;
+        };
+        
+        
+    
+        bool operator ==(Complex c){
+            if((a==c.a)&&(b=c.b)){
+    
+                return true;
+            }
+            else
+                return false;
+        }
+        
+        Complex operator++(){
+            cout<<"pre"<<endl;
+            Complex temp;
+            a++;
+            b++;
+            temp.a =a;
+            temp.b= b;
+            return temp;
+            
+        }
+        
+        Complex(){
+            
+        }
+        
+        
+         Complex operator++(int)  //post increment
+        {
+            cout<<"post"<<endl;
+            Complex temp;
+            temp.a= a;
+            temp.b=b;
+            a++;
+            b++;
+            
+            
+            return temp;
+        }
+       
+};
+
+int main(){
+    Complex c1(2,6), c2(2,6),c3, c4;
+    c1.print();
+    c2.print();
+    bool b=(c1==c2);
+    cout<<endl<<b;
+    c3=++c1;
+    c3.print();
+    c4=c2++;
+    c4.print();
+   
+    return 0;
+}*/
